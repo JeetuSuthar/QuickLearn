@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  .rainbow-text {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #cdcd24, #00ff00, #ce5aaf, #2486d7, #be16a7, rgb(206, 75, 32));
+    background-size: 400%;
+    -webkit-background-clip: text; /* For Chrome, Safari, and newer versions of Edge */
+    -moz-background-clip: text;    /* For older versions of Firefox */
+    background-clip: text;         /* Standard property */
+    color: transparent;
+    animation: rainbow 5s ease forwards;
+  }
+
+.glowing-input {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+
+  .glowing-input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  }
+}
