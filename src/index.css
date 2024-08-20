@@ -33,3 +33,27 @@
     box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
   }
 }
+/* Custom gradient border for Tailwind CSS */
+.border-gradient-to-r {
+  border-image: linear-gradient(to right, #3b82f6, #9333ea, #ec4899) 1;
+}
+.gradient-border {
+  position: relative;
+  padding: 4px; /* Controls border width */
+  border-radius: 0.5rem; /* Adjust as needed */
+  background: linear-gradient(to right, #3b82f6, #9333ea, #ec4899);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+}
